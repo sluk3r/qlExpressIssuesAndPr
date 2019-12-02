@@ -30,6 +30,7 @@ public class IssueNullOperator {
             runner.execute(express, context, null, true, false, null);
             fail("应该会有异常");
         } catch (Exception e) {
+            e.printStackTrace();
             String errorCauseMsg = e.getCause().getMessage();
             assertTrue(errorCauseMsg.equals("空操作数不能执行这个操作：<="));
         }
